@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐鱼体育 – 稳定入口与页面说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fde4c2 0%, #f8cba1 50%, #f5b882 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      line-height: 1.7;
+      color: #2e241e;
+    }
+
+    .page-wrapper {
+      max-width: 880px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(2px);
+      border-radius: 40px 40px 28px 28px;
+      box-shadow: 0 16px 40px rgba(140, 80, 40, 0.18);
+      overflow: hidden;
+      padding: 2.2rem 2.5rem 2.8rem;
+    }
+
+    /* hero 区域 — 横幅 */
+    .hero {
+      background: linear-gradient(112deg, #e98c4a, #d97b3a);
+      margin: -2.2rem -2.5rem 2.2rem -2.5rem;
+      padding: 3rem 2.5rem 2.4rem 2.5rem;
+      color: #fff3e8;
+      border-bottom: 3px solid #c0682b;
+      border-radius: 0 0 40px 40px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      font-size: 1.2rem;
+      opacity: 0.92;
+      max-width: 640px;
+      font-weight: 350;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255,215,175,0.25);
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      margin-top: 0.9rem;
+      backdrop-filter: blur(1px);
+      border: 1px solid rgba(255,230,200,0.3);
+    }
+
+    /* 正文卡片式段落 */
+    .section-card {
+      background: #fffcf7;
+      border-radius: 28px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(100, 60, 30, 0.06);
+      border: 1px solid #f2e3d6;
+    }
+
+    .section-card:last-of-type {
+      margin-bottom: 1.6rem;
+    }
+
+    .section-card h2 {
+      font-size: 1.65rem;
+      font-weight: 500;
+      margin-bottom: 0.9rem;
+      color: #4f2f1b;
+      border-left: 6px solid #d87a3a;
+      padding-left: 1rem;
+    }
+
+    .section-card p {
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+      color: #3d2d24;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item {
+      margin-top: 1.3rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #e5cfbe;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #4f2a17;
+      margin-bottom: 0.3rem;
+    }
+
+    /* 链接风格 —— 圆角按钮感 */
+    a {
+      text-decoration: none;
+      background: #e68a4b;
+      color: #fffcf5;
+      padding: 0.2rem 0.9rem;
+      border-radius: 60px;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+      box-shadow: 0 2px 6px rgba(190, 105, 45, 0.2);
+      border: 1px solid rgba(255, 215, 170, 0.3);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    a:hover {
+      background: #d47535;
+      box-shadow: 0 4px 12px rgba(180, 90, 30, 0.3);
+      transform: translateY(-1px);
+    }
+
+    a:active {
+      transform: translateY(0);
+      background: #c0682b;
+    }
+
+    /* 页尾 */
+    .page-footer {
+      background: #f3e5da;
+      border-radius: 60px;
+      padding: 1.2rem 2rem;
+      margin-top: 0.8rem;
+      text-align: center;
+      color: #4b3529;
+      font-size: 0.95rem;
+      border: 1px solid #e1cfbf;
+      backdrop-filter: blur(2px);
+    }
+
+    .page-footer p {
+      margin-bottom: 0.3rem;
+    }
+
+    .page-footer .hint {
+      font-weight: 450;
+      background: rgba(215, 140, 80, 0.12);
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+      .page-wrapper {
+        padding: 1.6rem 1.2rem 2rem;
+        border-radius: 30px;
+      }
+      .hero {
+        margin: -1.6rem -1.2rem 1.8rem -1.2rem;
+        padding: 2.2rem 1.2rem 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .section-card {
+        padding: 1.4rem 1.2rem;
+        border-radius: 24px;
+      }
+      .section-card h2 {
+        font-size: 1.35rem;
+      }
+      a {
+        white-space: normal;
+        padding: 0.2rem 0.8rem;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .hero .sub {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- hero 横幅 -->
+  <div class="hero">
+    <h1>乐鱼体育</h1>
+    <div class="sub">稳定入口 · 清晰说明 · 一本杂志式的平台介绍</div>
+    <div class="badge">✦ 专题说明页</div>
+  </div>
+
+  <!-- 背景说明 -->
+  <div class="section-card">
+    <h2>背景与定位</h2>
+    <p>
+      <a href="https://app-m-leyusports.com.cn">乐鱼体育</a> 是一个面向体育资讯与互动场景的服务页面，围绕赛事内容、运动社区以及信息聚合方向展开。作为长期维护的线上入口，它聚合了多栏目信息流，并且通过持续更新来适应不同用户对体育内容的需求。
+    </p>
+    <p>
+      从页面结构来看，乐鱼体育更倾向于用简洁的导航和板块划分来承载内容，避免信息过载。这种设计思路在如今的体育类站点中并不多见，却恰好契合了许多人「快速找到有效信息」的使用习惯。无论是日常浏览还是集中查阅某一项赛事，都能在相对清爽的界面里完成。
+    </p>
+  </div>
+
+  <!-- 三段自然介绍：特点、场景、FAQ摘要 -->
+  <div class="section-card">
+    <h2>特点与使用场景</h2>
+    <p>
+      乐鱼体育的页面布局以内容模块为基本单元，每个模块都配有独立的标题区和信息摘要，用户可以根据兴趣直接选择板块。不同于传统的体育门户，它减少了侧边栏和弹窗干扰，将注意力更多放在赛事更新和社区讨论上。
+    </p>
+    <p>
+      适用场景涵盖赛前预览、实时比分追踪以及赛后讨论。因为页面加载结构相对轻量，即使在移动网络环境下也能较快完成内容渲染，这对于需要快速获取比赛动态的用户来说是比较实际的优点。
+    </p>
+  </div>
+
+  <div class="section-card">
+    <h2>常见问题摘要</h2>
+    <div class="faq-item">
+      <strong>如何找到不同体育项目的内容？</strong>
+      <p>进入 <a href="https://app-m-leyusports.com.cn">乐鱼体育</a> 后，页面顶部或主区域会显示分类入口，通常包括足球、篮球、网球等主流项目。点击对应标签即可切换内容流，无需重新加载整个页面。</p>
+    </div>
+    <div class="faq-item">
+      <strong>是否需要注册才能浏览全部信息？</strong>
+      <p>大部分赛事资讯和基础数据在未登录状态下可以正常阅读。部分互动功能（如评论、收藏）可能引导用户完成简单注册，但浏览核心内容不受限制。</p>
+    </div>
+    <div class="faq-item">
+      <strong>页面访问稳定性如何？</strong>
+      <p>乐鱼体育一直将服务可用性作为基础要求，并定期对页面结构和后端接口进行调整。如果你在访问时遇到加载问题，可以尝试刷新或更换网络环境，多数情况下能快速恢复。</p>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="page-footer">
+    <p>如果你正在寻找一个信息组织清晰、内容更新稳定的体育页面，不妨直接访问</p>
+    <p><span class="hint"><a href="https://app-m-leyusports.com.cn">乐鱼体育</a> ← 直达平台</span></p>
+    <p style="margin-top: 0.6rem; font-size: 0.85rem; opacity: 0.7;">本页为杂志专题式说明，内容基于公开信息整理 · 稳定入口参考</p>
+  </div>
+
+</div>
+</body>
+</html>
