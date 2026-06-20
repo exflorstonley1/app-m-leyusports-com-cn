@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>欧赔 · 对照与延伸</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f5f9fb;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1d303a;
+      line-height: 1.6;
+      padding: 2.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .page {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    /* 开场区 */
+    .opening {
+      margin-bottom: 2.8rem;
+    }
+    .opening .short-line {
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: #2b6b7a;
+      border-left: 4px solid #3d9ba8;
+      padding-left: 1rem;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    .opening h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #15303b;
+      line-height: 1.25;
+      margin: 0.5rem 0 0.75rem;
+    }
+    .opening .hero-desc {
+      font-size: 1rem;
+      color: #2c4a56;
+      max-width: 780px;
+    }
+
+    /* 承接段落 —— 自然引出欧赔链接 */
+    .bridge {
+      background: #ffffff;
+      padding: 1.8rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(48, 108, 122, 0.08);
+      margin-bottom: 3rem;
+    }
+    .bridge p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .bridge p:last-child {
+      margin-bottom: 0;
+    }
+    .bridge a {
+      color: #1e7b89;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #9fd0d9;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .bridge a:hover {
+      color: #0b5a67;
+      border-bottom-color: #0b5a67;
+    }
+    .stat-tag {
+      display: inline-block;
+      background: #dff0f3;
+      color: #1a5c6a;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      letter-spacing: 0.02em;
+      margin-top: 0.4rem;
+    }
+
+    /* 特点卡片网格 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.8rem;
+    }
+    .feature-card {
+      background: white;
+      padding: 1.5rem 1.2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(48, 108, 122, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #e3edf0;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(48, 108, 122, 0.10);
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #18424f;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-card h3 span {
+      background: #3d9ba8;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #2b4f5c;
+    }
+
+    /* 场景 + 提示双栏 */
+    .dual-panel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .scene-box {
+      flex: 2.2;
+      min-width: 240px;
+      background: #eaf5f7;
+      padding: 1.6rem 1.8rem;
+      border-radius: 24px;
+    }
+    .scene-box h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #11515f;
+      margin-bottom: 0.8rem;
+    }
+    .scene-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .scene-box li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ccdee4;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .scene-box li::before {
+      content: "·";
+      color: #3d9ba8;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .scene-box li:last-child {
+      border-bottom: none;
+    }
+
+    .tip-box {
+      flex: 1.2;
+      min-width: 180px;
+      background: #ffffff;
+      padding: 1.6rem 1.6rem;
+      border-radius: 24px;
+      border: 1px solid #d4e3e8;
+    }
+    .tip-box h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #11515f;
+      margin-bottom: 0.6rem;
+    }
+    .tip-box p {
+      font-size: 0.9rem;
+      color: #25525f;
+      margin-bottom: 0.8rem;
+    }
+    .tip-box .faq-sample {
+      font-size: 0.85rem;
+      background: #f2f9fa;
+      padding: 0.8rem;
+      border-radius: 14px;
+      color: #1e4a56;
+    }
+    .faq-sample strong {
+      color: #125f6e;
+    }
+
+    /* 温和结尾 */
+    .gentle-footer {
+      padding: 2rem 0 1.6rem;
+      border-top: 1px solid #c7dbe1;
+      text-align: center;
+    }
+    .gentle-footer p {
+      font-size: 0.9rem;
+      color: #3b6470;
+      max-width: 600px;
+      margin: 0 auto 0.6rem;
+    }
+    .gentle-footer .small-link {
+      color: #2c7f8d;
+      text-decoration: none;
+      border-bottom: 1px dotted #8bbac6;
+    }
+    .gentle-footer .small-link:hover {
+      border-bottom: 1px solid #12535f;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.6rem 0.8rem;
+      }
+      .opening h1 {
+        font-size: 1.8rem;
+      }
+      .bridge {
+        padding: 1.4rem 1.2rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+      .dual-panel {
+        flex-direction: column;
+      }
+      .scene-box, .tip-box {
+        min-width: unset;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 开场短句 -->
+  <div class="opening">
+    <div class="short-line">日常查询 · 横向对照 · 延伸阅读</div>
+    <h1>欧赔不是数字，<br>是无数场比赛的微观叙事</h1>
+    <div class="hero-desc">一份赔率背后，是数据的沉淀与市场的博弈。从初始到临场，每一步变化都值得推敲。</div>
+  </div>
+
+  <!-- 承接段落：自然嵌入欧赔链接 -->
+  <div class="bridge">
+    <p>
+      每次打开赛事页面，大多数人先看的是胜平负，但真正将离散度、返还率、区间分布纳入观察的，
+      往往对比赛的理解更深一层。如果你在寻找一个能同时满足基础查询与进阶对照的数据站，
+      <a href="https://main-euroods.com">欧赔</a> 提供了结构化的初始赔率、即时赔率以及多家机构的横向比较，
+      无需注册即可直接使用。
+    </p>
+    <p>
+      你可以在一个视窗内对比主流公司与亚洲、欧洲中小机构的差异，
+      也可以按联赛、日期快速筛选。界面简洁，没有广告干扰，适合连续阅读与反复核对。
+    </p>
+    <span class="stat-tag">覆盖 90+ 联赛  ·  每日更新  ·  历史赔率回溯</span>
+  </div>
+
+  <!-- 特点列表：网格卡片 -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3><span></span> 多机构横向表</h3>
+      <p>同一场比赛同时展示威廉希尔、Interwetten、立博、Oddset 等超过 12 家机构的初始与即时赔率，便于发现离散方向。</p>
+    </div>
+    <div class="feature-card">
+      <h3><span></span> 返还率与区间</h3>
+      <p>每场比赛附带 94%‑97% 返还率标注，以及 1‑3‑5 区间划分，辅助判断机构对胜平负的倾向强度。</p>
+    </div>
+    <div class="feature-card">
+      <h3><span></span> 历史赔率变化图</h3>
+      <p>单个玩法的时间轴折线图，支持查看 7 天内的赔率波动，尤其适合关注临场 3 小时内的集中变动。</p>
+    </div>
+    <div class="feature-card">
+      <h3><span></span> 自定义对照板</h3>
+      <p>可固定最多 5 场比赛在顶部，同时滚动查看不同联赛的赔率结构，无需来回切换页面。</p>
+    </div>
+  </div>
+
+  <!-- 场景 + FAQ 提示（双栏） -->
+  <div class="dual-panel">
+    <div class="scene-box">
+      <h2>常见使用场景</h2>
+      <ul>
+        <li>周末联赛密集时，按开赛时间排序，快速浏览整轮欧赔分布</li>
+        <li>关注某家机构（如 365、Pinnacle）的调整节奏，对比其他主流</li>
+        <li>复盘前一日的比赛，查看终盘赔率与赛果的偏离程度</li>
+        <li>将欧赔与亚盘、大小球参考结合，做多维度笔记</li>
+      </ul>
+    </div>
+    <div class="tip-box">
+      <h2>延伸提示</h2>
+      <p>赔率变化不是预测，而是市场情绪的映射。建议每次对比时，记录下变化时间点与幅度。</p>
+      <div class="faq-sample">
+        <strong>常见疑问：</strong> 为什么同一场比赛不同机构的初始赔率差异有时超过 0.20？<br>
+        这通常与各家模型采用的边际、返还率以及消息面反应速度有关，可借助横向比较发现偏离值。
+      </div>
+    </div>
+  </div>
+
+  <!-- 温和结尾 -->
+  <div class="gentle-footer">
+    <p>
+      无论是初次接触还是长期关注，保持自己的记录习惯比追逐瞬时变动更重要。
+      数据本身不会说话，但反复的对照终会形成自己的理解。
+    </p>
+    <p style="font-size:0.85rem; opacity:0.75;">
+      — 从一场比赛开始，也可以从一场比赛结束。
+    </p>
+    <p style="margin-top: 1rem;">
+      <a href="https://main-euroods.com" class="small-link">欧赔</a>
+      · 无广告 · 无推荐 · 只有结构化的数据
+    </p>
+  </div>
+</div>
+</body>
+</html>
