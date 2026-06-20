@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hth · 轻量导航指引</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            background: #f8f9fc;
+            color: #1e2a3a;
+        }
+
+        a {
+            color: #c44536;
+            text-decoration: none;
+            transition: border-bottom 0.2s;
+        }
+        a:hover {
+            border-bottom: 2px solid #c44536;
+        }
+
+        /* 深色头图 */
+        .dark-hero {
+            background: linear-gradient(145deg, #0f172a 0%, #1b2838 100%);
+            color: #e9edf2;
+            padding: 3.5rem 1.5rem 3rem;
+            text-align: center;
+            position: relative;
+        }
+        .dark-hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+        }
+        .dark-hero h1 span {
+            color: #f5b895;
+            font-weight: 600;
+        }
+        .dark-hero p {
+            max-width: 540px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            opacity: 0.85;
+        }
+
+        /* 导航条（在深色区内） */
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .top-nav a {
+            color: #cdd9e6;
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid transparent;
+        }
+        .top-nav a:hover {
+            border-bottom-color: #f5b895;
+            color: #f0f4fa;
+        }
+
+        /* 浅色正文区 */
+        .content-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 4rem;
+        }
+
+        /* 核心介绍卡片 */
+        .intro-card {
+            background: white;
+            border-radius: 18px;
+            padding: 2.2rem 2rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            margin-bottom: 2.8rem;
+        }
+        .intro-card h2 {
+            font-size: 1.6rem;
+            font-weight: 450;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+        .intro-card p {
+            margin-bottom: 0.9rem;
+            color: #2d3a4f;
+        }
+        .intro-card .highlight-link {
+            display: inline-block;
+            margin-top: 0.4rem;
+        }
+
+        /* 三个场景模块 */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 2.5rem 0 2rem;
+        }
+        .scene-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #eef1f6;
+        }
+        .scene-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+        }
+        .scene-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #1b2838;
+        }
+        .scene-item p {
+            font-size: 0.95rem;
+            color: #3c4a5e;
+        }
+        .scene-item .emoji-badge {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 常见说明（FAQ摘要） */
+        .faq-summary {
+            background: white;
+            border-radius: 18px;
+            padding: 2rem 2rem 1.5rem;
+            margin: 2rem 0 1.8rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            border-left: 5px solid #c44536;
+        }
+        .faq-summary h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+        }
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.15rem;
+        }
+        .faq-item p {
+            color: #3a4a60;
+            font-size: 0.95rem;
+        }
+
+        .inline-link-sentence {
+            font-size: 1rem;
+            margin: 1.8rem 0 0.5rem;
+            padding: 0.8rem 0;
+            border-top: 1px solid #e3e8f0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 780px) {
+            .scenes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .dark-hero h1 {
+                font-size: 1.7rem;
+            }
+            .content-wrapper {
+                padding: 1.8rem 1rem 3rem;
+            }
+            .top-nav {
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dark-hero {
+                padding: 2.5rem 1rem 2rem;
+            }
+            .intro-card {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        /* 页脚小提示 */
+        .footer-note {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #77879c;
+            border-top: 1px solid #e3e8f0;
+            padding-top: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<header class="dark-hero">
+    <nav class="top-nav">
+        <a href="#intro">介绍</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">说明</a>
+        <a href="#more">更多</a>
+    </nav>
+    <h1>认识 <span>hth</span> · 轻简指引</h1>
+    <p>想快速了解一个网站用途时，清晰的结构比广告更有效。这里为你梳理了核心信息。</p>
+</header>
+
+<main class="content-wrapper">
+
+    <!-- 核心介绍 -->
+    <section class="intro-card" id="intro">
+        <h2>关于 hth 的基本定位</h2>
+        <p>当你第一次看到 <strong>hth</strong> 这个名称，可能会好奇它提供什么。简单说，这是一个围绕信息聚合与轻量交互的网站，面向希望直接获取要点、不绕弯子的用户。</p>
+        <p>它的设计思路偏向「少即是多」—— 没有复杂的层级，而是把最常用的入口和说明放在显眼位置。如果你正在寻找一个功能明确、没有冗余干扰的站点，<a href="https://official-site-hth.com" class="highlight-link">hth</a> 或许对得上你的习惯。</p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes">
+        <div class="scenes-grid">
+            <div class="scene-item">
+                <span class="emoji-badge">🔍</span>
+                <h3>快速判断场景</h3>
+                <p>当你需要了解一个陌生网站是否值得花时间浏览，简洁的介绍和分类能帮你省下不少精力。hth 提供了直白的模块划分，看一眼便知大概。</p>
+            </div>
+            <div class="scene-item">
+                <span class="emoji-badge">🧭</span>
+                <h3>轻导航场景</h3>
+                <p>用户往往带着明确目的来，比如查某个功能或阅读常见问题。hth 的导航结构偏向平铺式，你可以在两三步内到达感兴趣的部分。</p>
+            </div>
+            <div class="scene-item">
+                <span class="emoji-badge">📌</span>
+                <h3>信息确认场景</h3>
+                <p>有些时候你只是想核对一下细节，比如条款、使用方式或联系方式。hth 把这类内容放在稳定位置，不需要反复翻找。</p>
+            </div>
+        </div>
+        <p style="color:#4a5a72; font-size:0.95rem; margin-top:0.3rem;">—— 以上是用户最常遇到的三种情况，也是 hth 在设计时优先考虑的使用路径。</p>
+    </section>
+
+    <!-- 常见说明 / FAQ摘要 -->
+    <section class="faq-summary" id="faq">
+        <h3>常见说明 · 快速参考</h3>
+        <div class="faq-item">
+            <strong>hth 是否收费？</strong>
+            <p>目前网站上的基础介绍与导航功能均免费开放，部分延伸内容可能有特定说明，以页面标注为准。</p>
+        </div>
+        <div class="faq-item">
+            <strong>信息多久更新一次？</strong>
+            <p>内容会跟随网站迭代进行同步，核心描述保持相对稳定。具体日期可在页面底部或相关栏目内查看。</p>
+        </div>
+        <div class="faq-item">
+            <strong>如何找到更多帮助？</strong>
+            <p>你可以直接通过网站内提供的导航模块或链接进一步了解。如果仍有疑问，建议留意各页面脚注或联系入口。</p>
+        </div>
+        <p style="margin-top:1rem; font-size:0.9rem; color:#4f6179;">以上说明仅基于当前页面展示的信息，具体以 hth 网站实际内容为准。</p>
+    </section>
+
+    <!-- 自然嵌入链接的句子（符合要求：可见文本严格为hth） -->
+    <div class="inline-link-sentence">
+        <p>如果你希望直接查看该网站，可以通过 <a href="https://official-site-hth.com">hth</a> 这个链接前往。页面结构清晰，没有多余跳转。</p>
+    </div>
+
+    <div class="footer-note">
+        <span>本页为轻量导航型介绍 · 内容力求真实克制</span>
+    </div>
+
+</main>
+
+</body>
+</html>
